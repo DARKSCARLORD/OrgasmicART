@@ -7,13 +7,16 @@
     <meta name="keywords" content="local art, buy art, art gallery, community artists, paintings, sculptures">
     <meta name="author" content="Chandler, Elizabeth">
     <title>Art Gallery</title>
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7EHH1W40S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'UA-XXXXXXXXX-X');
-    </script>
+  gtag('config', 'G-W7EHH1W40S');
+</script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,19 +26,26 @@
             color: black;
             font-weight: bold;
         }
-        header, footer {
+        header {
             background-color: #333;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
         }
         nav ul {
             list-style: none;
             padding: 0;
-            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
         }
         nav ul li {
-            display: inline;
             margin: 0 15px;
         }
         nav ul li a {
@@ -46,28 +56,36 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons a {
+            background-color: #0073aa;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-buttons a:hover {
+            background-color: #005f8a;
+        }
         .main-content {
             min-height: 60vh;
             padding: 20px 50px;
         }
-        .main-content .text-section {
-            flex: 0 0 33.33%;
-        }
-        .main-content .image-section {
-            flex: 0 0 66.7%;
-        }
-        footer {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px 50px;
-            text-align: left;
-        }
         .footer-section {
-            flex: 1;
-            padding: 0 20px;
+            padding: 20px;
         }
-        .footer-section h4 {
-            margin-top: 0;
+        .footer-section h4, .footer-section p {
+            margin: 5px 0;
+        }
+        .footer-section p a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-section p a:hover {
+            text-decoration: underline;
         }
         .slideshow-container {
             position: relative;
@@ -111,7 +129,7 @@
 </head>
 <body>
     <header>
-        <h1>Art Gallery</h1>
+        <div class="logo">Orgasmic Art<br>For the People, By the People</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -120,21 +138,25 @@
                 <li><a href="#join-our-team">Join our Team</a></li>
             </ul>
         </nav>
+        <div class="nav-buttons">
+            <a href="#login">LOGIN</a>
+            <a href="#signup">SIGN UP</a>
+        </div>
     </header>
 
     <main>
         <div class="slideshow-container">
             <div class="slideshow">
                 <ul>
-                    <li><img src="HTML WEB/HOME ART/img-1.jpeg" alt="Artwork 1"></li>
-                    <li><img src="HTML WEB/HOME ART/img-2.jpeg" alt="Artwork 2"></li>
-                    <li><img src="HTML WEB/HOME ART/img-3.jpeg" alt="Artwork 3"></li>
-                    <li><img src="HTML WEB/HOME ART/img-4.jpeg" alt="Artwork 4"></li>
-                    <li><img src="HTML WEB/HOME ART/img-5.jpeg" alt="Artwork 5"></li>
-                    <li><img src="HTML WEB/HOME ART/img-6.jpeg" alt="Artwork 6"></li>
-                    <li><img src="HTML WEB/HOME ART/img-7.jpeg" alt="Artwork 7"></li>
-                    <li><img src="HTML WEB/HOME ART/img-8.jpeg" alt="Artwork 8"></li>
-                    <li><img src="HTML WEB/HOME ART/img-9.jpeg" alt="Artwork 9"></li>
+                    <li><img src="img-1.jpeg" alt="Artwork 1"></li>
+                    <li><img src="img-2.jpeg" alt="Artwork 2"></li>
+                    <li><img src="img-3.jpeg" alt="Artwork 3"></li>
+                    <li><img src="img-4.jpeg" alt="Artwork 4"></li>
+                    <li><img src="img-5.jpeg" alt="Artwork 5"></li>
+                    <li><img src="img-6.jpeg" alt="Artwork 6"></li>
+                    <li><img src="img-7.jpeg" alt="Artwork 7"></li>
+                    <li><img src="img-8.jpeg" alt="Artwork 8"></li>
+                    <li><img src="img-9.jpeg" alt="Artwork 9"></li>
                 </ul>
                 <a href="#" class="prev">&#10094;</a>
                 <a href="#" class="next">&#10095;</a>
