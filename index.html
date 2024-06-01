@@ -101,6 +101,10 @@
         }
         .slideshow-container img {
             width: 100%;
+            display: none;
+        }
+        .active {
+            display: block;
         }
         .prev, .next {
             position: absolute;
@@ -110,6 +114,8 @@
             color: white;
             padding: 10px;
             cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
         }
         .prev {
             left: 0;
@@ -152,21 +158,17 @@
 
     <main>
         <div class="slideshow-container">
-            <div class="slideshow">
-                <ul>
-                    <li><img src="img-1.jpeg" alt="Artwork 1"></li>
-                    <li><img src="img-2.jpeg" alt="Artwork 2"></li>
-                    <li><img src="img-3.jpeg" alt="Artwork 3"></li>
-                    <li><img src="img-4.jpeg" alt="Artwork 4"></li>
-                    <li><img src="img-5.jpeg" alt="Artwork 5"></li>
-                    <li><img src="img-6.jpeg" alt="Artwork 6"></li>
-                    <li><img src="img-7.jpeg" alt="Artwork 7"></li>
-                    <li><img src="img-8.jpeg" alt="Artwork 8"></li>
-                    <li><img src="img-9.jpeg" alt="Artwork 9"></li>
-                </ul>
-                <a href="#" class="prev">&#10094;</a>
-                <a href="#" class="next">&#10095;</a>
-            </div>
+            <img class="active" src="img-1.jpeg" alt="Artwork 1">
+            <img src="img-2.jpeg?w=1024" alt="Artwork 2">
+            <img src="img-3.jpeg" alt="Artwork 3">
+            <img src="img-4.jpeg" alt="Artwork 4">
+            <img src="img-5.jpeg" alt="Artwork 5">
+            <img src="img-6.jpeg" alt="Artwork 6">
+            <img src="img-7.jpeg" alt="Artwork 7">
+            <img src="img-8.jpeg" alt="Artwork 8">
+            <img src="img-9.jpeg" alt="Artwork 9">
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
         </div>
 
         <h2 class="text-center">Explore Local Artistry</h2>
@@ -205,5 +207,29 @@
         </div>
     </footer>
 
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slideshow-container img");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function plusSlides(n) {
+            let slides = document.querySelectorAll(".slideshow-container img");
+            slides[slideIndex - 1].classList.remove("active");
+            slideIndex += n;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            slides[slideIndex - 1].classList.add("active");
+        }
+    </script>
 </body>
 </html>
