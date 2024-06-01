@@ -7,16 +7,14 @@
     <meta name="keywords" content="local art, buy art, art gallery, community artists, paintings, sculptures">
     <meta name="author" content="Chandler, Elizabeth">
     <title>Art Gallery</title>
-    
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7EHH1W40S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7EHH1W40S');
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,7 +72,15 @@
             min-height: 60vh;
             padding: 20px 50px;
         }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
         .footer-section {
+            flex: 1;
             padding: 20px;
         }
         .footer-section h4, .footer-section p {
@@ -181,7 +187,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-section">
             <h4>Orgasmic Art</h4>
             <p>For the People, By the People</p>
